@@ -19,7 +19,7 @@ class _AssertType(Enum):
 class _AssertStdoutContext:
     """"internal Context Class to use it in a with context block"""
 
-    def __init__(self, test_case, output_expected: tuple, assert_type: _AssertType):
+    def __init__(self, test_case, assert_type: _AssertType, output_expected: Tuple[str] | str):
         """constructor, testcase is the TestCase original instance, output_expected is the expected
         output on quiting the context"""
         self.test_case = test_case
@@ -47,22 +47,22 @@ class _AssertStdoutContext:
 
 
 class TestCaseStdoutMixin:
-    """"Class to use as a Mixin Class along django.test.Testcase or unitest.Testcase"""
+    """Class to use as a Mixin Class along django.test.Testcase or unitest.Testcase"""
 
     def assertStdout(self, expected_output: str):  # noqa: N802 # pylint: disable=invalid-name
         """"method to test if the expected_output is exactly what was streamed in stdout"""
-        return _AssertStdoutContext(self, expected_output, _AssertType.EQ)
+        return _AssertStdoutContext(self, _AssertType.EQ, expected_output)
 
-    def assertStdoutPrints(self, *expected_output: str):  # noqa: N802 # pylint: disable=invalid-name
+    def assertStdoutPrints(self, *expected_output: Tuple[str] | str):  # noqa: N802 # pylint: disable=invalid-name
         """"method to test if a list of strings, (*expected_output) is exactly what was
         streamed in stdout separated with /n"""
         expected_output = "\n".join(expected_output) + "\n"
-        return _AssertStdoutContext(self, expected_output, _AssertType.EQ)
+        return _AssertStdoutContext(self, _AssertType.EQ, expected_output)
 
-    def assertStdoutContains(self, *expected_output: Tuple[str]):  # noqa: N802 # pylint: disable=invalid-name
-        """"method to test if a list of expected_output was printed in stdouts"""
-        return _AssertStdoutContext(self, expected_output, _AssertType.IN)
+    def assertStdoutContains(self, *expected_output: Tuple[str] | str):  # noqa: N802 # pylint: disable=invalid-name
+        """"method to test if a list of expected_output was printed in stdout"""
+        return _AssertStdoutContext(self, _AssertType.IN, *expected_output)
 
     def assertStdoutRegex(self, expected_regex_output: str):  # noqa: N802 # pylint: disable=invalid-name
         """"method to test if expected_regex_output match with stdout"""
-        return _AssertStdoutContext(self, expected_regex_output, _AssertType.REGEX)
+        return _AssertStdoutContext(self, _AssertType.REGEX, expected_regex_output)

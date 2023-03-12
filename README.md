@@ -1,4 +1,4 @@
-# Karpyncho Test Stdout
+# Karpyncho Stdout-Context
 
 ## Goal
 
@@ -33,7 +33,7 @@ class TestMyClass(TestCase, TestCaseStdoutMixin):
 
 When the context ends, the assertion will be checked
 
-## Available asserts
+## Available assertions
 
 ### assertStdout(expected_output)
 
@@ -41,7 +41,7 @@ will assert that the context will finish writing exactly expected_output in cons
 
 ### assertStdoutPrints(line1, line2, ...)
 
-is the same than assertStdout but passing each line 
+is the same as assertStdout but passing each line 
 
 ### assertStdoutContains(*expected_output)
 
@@ -50,3 +50,9 @@ will assert that each string in the expected_output tuple is a substring of the 
 ### assertStdoutRegex(regex)
 
 will assert that the console output matches with the provided regex
+
+## Future improvements
+
+ * Stderr Management
+ * context capturing of stdout/stderr returning the text, not forcing an assertion creating the context
+ * capturing decorators
