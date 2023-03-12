@@ -6,6 +6,7 @@ https://stackoverflow.com/questions/33767627/python-write-unittest-for-console-p
 import io
 import sys
 from enum import Enum
+from typing import Tuple
 
 
 class _AssertType(Enum):
@@ -18,7 +19,7 @@ class _AssertType(Enum):
 class _AssertStdoutContext:
     """"internal Context Class to use it in a with context block"""
 
-    def __init__(self, test_case, output_expected: str, assert_type: _AssertType):
+    def __init__(self, test_case, output_expected: tuple, assert_type: _AssertType):
         """constructor, testcase is the TestCase original instance, output_expected is the expected
         output on quiting the context"""
         self.test_case = test_case
@@ -38,7 +39,9 @@ class _AssertStdoutContext:
         if self.assert_type == _AssertType.EQ:
             self.test_case.assertEqual(captured, self.expected)
         elif self.assert_type == _AssertType.IN:
-            self.test_case.assertIn(self.expected, captured)
+            # pylint: disable=expression-not-assigned
+            [self.test_case.assertIn(expected_text, captured) for expected_text in self.expected]
+            # pylint: enable=expression-not-assigned
         elif self.assert_type == _AssertType.REGEX:
             self.test_case.assertRegex(captured, self.expected)
 
@@ -56,8 +59,8 @@ class TestCaseStdoutMixin:
         expected_output = "\n".join(expected_output) + "\n"
         return _AssertStdoutContext(self, expected_output, _AssertType.EQ)
 
-    def assertStdoutContains(self, expected_output: str):  # noqa: N802 # pylint: disable=invalid-name
-        """"method to test if expected_output was printed in stdouts"""
+    def assertStdoutContains(self, *expected_output: Tuple[str]):  # noqa: N802 # pylint: disable=invalid-name
+        """"method to test if a list of expected_output was printed in stdouts"""
         return _AssertStdoutContext(self, expected_output, _AssertType.IN)
 
     def assertStdoutRegex(self, expected_regex_output: str):  # noqa: N802 # pylint: disable=invalid-name
