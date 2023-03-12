@@ -43,9 +43,9 @@ will assert that the context will finish writing exactly expected_output in cons
 
 is the same than assertStdout but passing each line 
 
-### assertStdoutContains(expected_output)
+### assertStdoutContains(*expected_output)
 
-will assert that expected_output is a substring of the console output
+will assert that each string in the expected_output tuple is a substring of the console output
 
 ### assertStdoutRegex(regex)
 
