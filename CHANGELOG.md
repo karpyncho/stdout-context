@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### [Unreleased]
 
+#### Fixed
+
+ * Fixed type hints warnings and typos in stdout_context/__init__.py
+
 #### Fixed - Documentation
 
  * fix in README.md changed title of the project
@@ -17,7 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 #### Added - Test cases
 
  * added all test cases for failing assertions 
- 
+
 ### [0.1.1] - 2023-03-12
 
 #### Changed

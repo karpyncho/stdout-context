@@ -53,4 +53,6 @@ will assert that the console output matches with the provided regex
 
 ## Future improvements
 
- * 
+ * Stderr Management
+ * context capturing of stdout/stderr returning the text, not forcing an assertion creating the context
+ * capturing decorators
