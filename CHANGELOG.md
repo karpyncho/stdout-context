@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
  
 ### [0.1.1] - 2023-03-12
 
- * assertContains(text1, text2, text3...) now supports several texts and all of them must be present in the console output to pass the assertion
+ * assertStdoutContains(text1, text2, text3...) now supports several texts and all of them must be present in the console output to pass the assertion
 
 ### [0.1.0] - 2023-03-11
 
