@@ -25,9 +25,9 @@ class TestPrint(TestCase, TestCaseStdoutMixin):
             sys.stderr.write("test\n")
 
     def test_assert_stdout_contains(self):
-        with self.assertStdoutContains("test"):
+        with self.assertStdoutContains("xxxx"):
             print("test1")
-            print("test")
+            print("xxxx")
             print("test3")
 
     def test_assert_stdout_contains_same_line(self):
