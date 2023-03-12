@@ -30,9 +30,23 @@ class TestPrint(TestCase, TestCaseStdoutMixin):
             print("xxxx")
             print("test3")
 
-    def test_assert_stdout_contains_same_line(self):
+    def test_assert_stdout_contains_one_line(self):
         with self.assertStdoutContains("mytest"):
             print("test1 mytest test2")
+
+    def test_assert_stdout_contains_one_line_fails(self):
+        with self.assertRaises(AssertionError):
+            with self.assertStdoutContains("blah blah"):
+                print("test1 mytest test2")
+
+    def test_assert_stdout_contains_several_lines(self):
+        with self.assertStdoutContains("mytest",  "test1"):
+            print("test1 mytest test2")
+
+    def test_assert_stdout_contains_several_lines_fails(self):
+        with self.assertRaises(AssertionError):
+            with self.assertStdoutContains("mytest", "blah blah"):
+                print("test1 mytest test2")
 
     def test_assert_stdout_regex(self):
         with self.assertStdoutRegex(r'^a+b+c+$'):
