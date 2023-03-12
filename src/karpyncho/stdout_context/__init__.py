@@ -19,7 +19,7 @@ class _AssertType(Enum):
 class _AssertStdoutContext:
     """"internal Context Class to use it in a with context block"""
 
-    def __init__(self, test_case, assert_type: _AssertType, output_expected: Tuple[str]|str):
+    def __init__(self, test_case, assert_type: _AssertType, output_expected: Tuple[str] | str):
         """constructor, testcase is the TestCase original instance, output_expected is the expected
         output on quiting the context"""
         self.test_case = test_case
@@ -53,13 +53,13 @@ class TestCaseStdoutMixin:
         """"method to test if the expected_output is exactly what was streamed in stdout"""
         return _AssertStdoutContext(self, _AssertType.EQ, expected_output)
 
-    def assertStdoutPrints(self, *expected_output: Tuple[str]|str):  # noqa: N802 # pylint: disable=invalid-name
+    def assertStdoutPrints(self, *expected_output: Tuple[str] | str):  # noqa: N802 # pylint: disable=invalid-name
         """"method to test if a list of strings, (*expected_output) is exactly what was
         streamed in stdout separated with /n"""
         expected_output = "\n".join(expected_output) + "\n"
         return _AssertStdoutContext(self, _AssertType.EQ, expected_output)
 
-    def assertStdoutContains(self, *expected_output: Tuple[str]|str):  # noqa: N802 # pylint: disable=invalid-name
+    def assertStdoutContains(self, *expected_output: Tuple[str] | str):  # noqa: N802 # pylint: disable=invalid-name
         """"method to test if a list of expected_output was printed in stdout"""
         return _AssertStdoutContext(self, _AssertType.IN, *expected_output)
 
