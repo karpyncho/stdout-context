@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 #### Fixed - Documentation
 
+ * fix in README.md changed title of the project
  * fix in README.md explaining changes of assertStdoutContains
  * fix CHANGELOG.md related to assertStdoutContains
  * fix CHANGELOG.md a few typos
