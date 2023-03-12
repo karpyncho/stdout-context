@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
  * Fixed type hints warnings and typos in stdout_context/__init__.py
 
+#### Added - Documentation
+
+ * added Future Improvements section in README.md
+
 #### Fixed - Documentation
 
  * fix in README.md changed title of the project
