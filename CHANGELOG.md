@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### [Unreleased]
 
+### [0.1.2] - 2023-03-12
+
 #### Fixed
 
  * Fixed type hints warnings and typos in stdout_context/__init__.py
@@ -22,9 +24,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
  * fix CHANGELOG.md related to assertStdoutContains
  * fix CHANGELOG.md a few typos
 
-#### Added - Test cases
+#### Added - Development
 
  * added all test cases for failing assertions 
+ * added publishing github action 
 
 ### [0.1.1] - 2023-03-12
 
