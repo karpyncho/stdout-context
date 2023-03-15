@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### [Unreleased]
 
+### [0.1.3] - 2023-03-15
+
+#### Removed
+
+ * Removed compatibility with Python 3.5
+
+#### Fixed
+
+ * Fixed type hint | not compatible with python<=3.10
+
+#### Added - CI
+
+ * mypy checking added on Tox
+
 ### [0.1.2] - 2023-03-12
 
 #### Fixed
