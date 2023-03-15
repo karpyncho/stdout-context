@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### [Unreleased]
 
+#### Added - CI
+ * github action on push and pull_request for check
+ * using tox as check tool
+
 ### [0.1.3] - 2023-03-15
 
 #### Removed
