@@ -3,7 +3,7 @@
 [![PyPI version](https://badge.fury.io/py/karpyncho-stdout-context.svg)](https://badge.fury.io/py/karpyncho-stdout-context)
 [![PyPI Supported Python Versions](https://img.shields.io/pypi/pyversions/karpyncho-stdout-context.svg)](https://pypi.python.org/pypi/karpyncho-stdout-context/)
 [![check](https://github.com/tox-dev/tox-gh/actions/workflows/check.yml/badge.svg)](https://github.com/tox-dev/tox-gh/actions/workflows/check.yml)
-[![Coverage Status](https://coveralls.io/repos/github/karpyncho/stdout-context/badge.svg?branch=main)](https://coveralls.io/github/karpyncho/stdout-context?branch=main)
+[![codecov](https://codecov.io/gh/openapi-generators/karpyncho-stdout-context/branch/main/graph/badge.svg)](https://codecov.io/gh/triaxtec/karpyncho-stdout-context)
 
 ## Goal
 
