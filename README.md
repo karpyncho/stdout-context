@@ -3,8 +3,7 @@
 [![PyPI version](https://badge.fury.io/py/karpyncho-stdout-context.svg)](https://badge.fury.io/py/karpyncho-stdout-context)
 [![PyPI Supported Python Versions](https://img.shields.io/pypi/pyversions/karpyncho-stdout-context.svg)](https://pypi.python.org/pypi/karpyncho-stdout-context/)
 [![check](https://github.com/tox-dev/tox-gh/actions/workflows/check.yml/badge.svg)](https://github.com/tox-dev/tox-gh/actions/workflows/check.yml)
-[![codecov](https://codecov.io/gh/openapi-generators/karpyncho-stdout-context/branch/main/graph/badge.svg)](https://codecov.io/gh/triaxtec/karpyncho-stdout-context)
-
+[![codecov](https://codecov.io/gh/karpyncho/stdout-context/branch/main/graph/badge.svg?token=M4IT5AXE88)](https://codecov.io/gh/karpyncho/stdout-context)
 ## Goal
 
 This package main goal is to extend unittest to be able to make assertions on what was printed in the console (StdOut) 
