@@ -7,12 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### [Unreleased]
 
-#### Added - Documentation
+#### Fixed
+
+ * Removed __init__.py for namespace package karpyncho 
+
+#### Fixed - Documentation
 
  * Added Badges (version - python versions - check) to Readme.md
+ * removed link to other package
 
 #### Added - CI
- * 
+
  * github action on push and pull_request for check
  * using tox as check tool
 

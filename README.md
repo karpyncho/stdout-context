@@ -14,8 +14,6 @@ This package main goal is to extend unittest to be able to make assertions on wh
 pip install karpyncho_stdout_context
 ```
 
-https://pypi.org/project/stdout-stderr-capturing/
-
 ## TestCaseStdoutMixin
 
 Once the package is installed TestCaseStdoutMixin can be used along unittest.TestCase or django.test.TestCase as multiple inheritance mixin.
